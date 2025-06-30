@@ -35,6 +35,11 @@ const reload = () => {
 type FormFields = z.infer<typeof schema>;
 
 function App() {
+  const cardInfo = useCardStore((state) => state.cardInfo);
+
+
+console.log("Zustand cardInfo:", cardInfo);
+
   const {
     register,
     handleSubmit,
@@ -45,6 +50,7 @@ function App() {
   });
 
   const { setSubmitted, setCardInfo, isSubmitted } = useCardStore();
+ 
 
   const handleZustandSubmit: SubmitHandler<FormFields> = (data) => {
     setCardInfo(data);
@@ -66,7 +72,7 @@ function App() {
       : "00";
   
   if (isSubmitted) {
-    console.log();
+   
     return (
       <div className="w-full h-screen flex bg-white">
         <div className="flex items-center justify-center flex-col w-4/12 h-full bg-bg-main-desktop bg-no-repeat bg-cover bg-center">

@@ -16,6 +16,7 @@ type CardStore = {
 };
 
 export const useCardStore = create<CardStore>((set) => ({
+
   isSubmitted: false,
   cardInfo: {
     CardholderName: "",
@@ -27,3 +28,4 @@ export const useCardStore = create<CardStore>((set) => ({
   setSubmitted: (value) => set({ isSubmitted: value }),
   setCardInfo: (data) => set({ cardInfo: data }),
 }));
+
